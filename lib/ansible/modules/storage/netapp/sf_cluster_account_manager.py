@@ -116,7 +116,6 @@ class SolidFireClusterAccount(object):
             user_password=dict(required=True, type='str'),
             access=dict(required=True, type='list'),
             account_id=dict(required=False, type='int', default=None),
-            new_name=dict(required=False, type='str', default=None),
             attributes=dict(required=False, type='dict'),
             status=dict(required=False, type='str'),
         ))
@@ -133,7 +132,6 @@ class SolidFireClusterAccount(object):
         self.name = p['name']
         self.user_password = p['password']
         self.account_id = p['account_id']
-        self.new_name = p['new_name']
         self.attributes = p['attributes']
         self.status = p['status']
 
