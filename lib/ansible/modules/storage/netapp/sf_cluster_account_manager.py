@@ -70,25 +70,24 @@ options:
 '''
 
 EXAMPLES = """
-- name: Create Account
-  sf_account_manager:
+- name: Create Cluster Admin Account
+  sf_cluster_account_manager:
     hostname: "{{ solidfire_hostname }}"
     username: "{{ solidfire_username }}"
     password: "{{ solidfire_password }}"
     state: present
     name: TenantA
 
-- name: Modify Account
-  sf_account_manager:
+- name: Modify Cluster Admin Account
+  sf_cluster_account_manager:
     hostname: "{{ solidfire_hostname }}"
     username: "{{ solidfire_username }}"
     password: "{{ solidfire_password }}"
     state: present
     name: TenantA
-    new_name: TenantA-Renamed
 
-- name: Delete Account
-  sf_account_manager:
+- name: Delete Cluster Admin Account
+  sf_cluster_account_manager:
     hostname: "{{ solidfire_hostname }}"
     username: "{{ solidfire_username }}"
     password: "{{ solidfire_password }}"
