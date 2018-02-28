@@ -207,9 +207,12 @@ class SolidFireClusterAccount(object):
         update_account = False
         account_detail = self.get_account()
 
-        # It seems that read always gets added, so remove read from the result for comparison reasons,
-        # otherwise, it will detect a delta every run
-        account_detail.access.remove("read")
+        # Read always gets added regardlress of the access requested,
+        # so remove read from the result (if defined) for comparison reasons,
+        # otherwise, it will detect a delta every run.  This has been reported
+        # in internal netapp bug #25269
+        if account_detail.access is not None:
+            account_detail.access.remove("read")
 
         if account_detail:
             account_exists = True
