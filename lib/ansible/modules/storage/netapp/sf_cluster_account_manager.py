@@ -117,7 +117,6 @@ class SolidFireClusterAccount(object):
             access=dict(required=True, type='list'),
             account_id=dict(required=False, type='int', default=None),
             attributes=dict(required=False, type='dict'),
-            status=dict(required=False, type='str'),
         ))
 
         self.module = AnsibleModule(
@@ -133,7 +132,6 @@ class SolidFireClusterAccount(object):
         self.user_password = p['password']
         self.account_id = p['account_id']
         self.attributes = p['attributes']
-        self.status = p['status']
 
         # Check to make sure the access type is a valid type
         valid_access_type = ["accounts","administrator","clusteradmins","drives","nodes","read","reporting","repositories","volumes","write"]
